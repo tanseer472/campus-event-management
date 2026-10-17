@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusConnect | Event Management</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">C</span> Campus<span>Connect</span></a>
+  <nav><a href="#events">Explore Events</a><a href="#about">About</a></nav>
+  <div class="auth-actions"><span id="userBadge" class="user-badge"></span><button class="btn btn-outline" id="loginOpen">Log in</button><button class="btn btn-primary" id="signupOpen">Join Campus</button><button class="btn btn-outline hidden" id="logoutBtn">Log out</button></div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow"><span class="pulse"></span> YOUR CAMPUS. YOUR COMMUNITY.</span>
+    <h1>Make campus life<br><em>unforgettable.</em></h1>
+    <p>Discover workshops, sports, seminars and student experiences. Find your next big moment, all in one place.</p>
+    <div class="hero-buttons"><a href="#events" class="btn btn-primary btn-large">Explore events <span>↗</span></a><button class="btn btn-glass btn-large" id="heroSignup">Get started</button></div>
+    <div class="hero-stats"><div><strong id="eventCount">06</strong><span>Upcoming events</span></div><div><strong>05+</strong><span>Event categories</span></div><div><strong>1 place</strong><span>For campus life</span></div></div>
+  </div>
+  <div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-card card-back"><span>✦</span><small>MAKE IT COUNT</small></div><div class="art-card card-front"><div class="art-top"><span>UPCOMING EVENT</span><span class="art-dot"></span></div><div class="art-emoji">🎓</div><h3>Ideas meet<br>opportunity.</h3><div class="art-line"></div><div class="art-bottom"><span>Campus community</span><b>↗</b></div></div><div class="floating-chip chip-one">✦ Learn something new</div><div class="floating-chip chip-two">◎ Meet your people</div></div>
+</section>
+<section class="events-section" id="events">
+  <div class="section-heading"><div><span class="eyebrow">WHAT'S HAPPENING</span><h2>Find your <em>next event.</em></h2><p>Good things happen when you show up.</p></div><div class="event-total"><strong id="shownCount">0</strong><span>events to explore</span></div></div>
+  <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" placeholder="Search events, places, topics..." aria-label="Search events"></label><select id="categoryFilter" aria-label="Filter category"><option>All</option><option>Workshop</option><option>Sports</option><option>Seminar</option><option>Competition</option><option>Conference</option><option>Society</option></select><button id="refreshBtn" class="btn btn-outline">↻ Refresh</button></div>
+  <div id="eventGrid" class="event-grid"><div class="loading">Loading campus events…</div></div>
+</section>
+<section class="bottom-cta" id="about"><div><span class="eyebrow">YOUR CAMPUS IS WAITING</span><h2>Don't just attend.<br><em>Be part of it.</em></h2></div><button class="btn btn-light btn-large" id="ctaSignup">Create your account ↗</button></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-mark">C</span> Campus<span>Connect</span></a><p>A campus where every event brings us closer.</p><small>Mini Project · Full-Stack Web Application · Git & GitHub Collaboration</small></footer>
+
+<div class="modal hidden" id="authModal" role="dialog" aria-modal="true">
+ <div class="modal-card"><button class="modal-close" id="modalClose" aria-label="Close">×</button><span class="eyebrow" id="modalEyebrow">WELCOME TO CAMPUSCONNECT</span><h2 id="modalTitle">Join the community.</h2><p id="modalDesc">Create an account to register for campus events.</p>
+  <form id="authForm"><div id="nameField" class="field"><label for="authName">Full name</label><input id="authName" placeholder="Your name"></div><div class="field"><label for="authEmail">University email</label><input id="authEmail" type="email" required placeholder="you@campus.edu"></div><div class="field"><label for="authPassword">Password</label><input id="authPassword" type="password" required minlength="6" placeholder="At least 6 characters"></div><button class="btn btn-primary btn-full" id="authSubmit" type="submit">Create account</button></form>
+  <p class="modal-switch" id="modalSwitch">Already a member? <button id="switchAuth">Log in</button></p><div class="demo-note">Demo admin: <b>admin@campus.edu</b> / <b>Admin123!</b></div>
+ </div>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>

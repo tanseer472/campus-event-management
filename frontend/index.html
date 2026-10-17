@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Event Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">University Events</div>
+    <ul class="nav-links">
+      <li><a href="#" data-page="home">Home</a></li>
+      <li><a href="#" data-page="events">Events</a></li>
+      <li><a href="#" data-page="register">Register</a></li>
+    </ul>
+  </nav>
+
+  <main id="app">
+    <section id="home" class="page active">
+      <div class="hero">
+        <h1>Welcome to Campus Event Management</h1>
+        <p>Discover seminars, workshops, sports, and more!</p>
+        <a href="#" data-page="events" class="btn">Browse Events</a>
+      </div>
+      <h2>Featured Events</h2>
+      <div id="featured-events" class="events-grid"></div>
+    </section>
+
+    <section id="events" class="page">
+      <h1>All Events</h1>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search events...">
+      </div>
+      <div id="events-list" class="events-grid"></div>
+    </section>
+
+    <section id="event-detail" class="page">
+      <div id="event-content"></div>
+    </section>
+
+    <section id="register" class="page auth-form">
+      <h2>Register for Event</h2>
+      <form id="reg-form">
+        <input type="text" id="reg-name" required placeholder="Your Name">
+        <input type="email" id="reg-email" required placeholder="Your Email">
+        <input type="hidden" id="event-id">
+        <button type="submit" class="btn">Submit Registration</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Campus Event Management System</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
